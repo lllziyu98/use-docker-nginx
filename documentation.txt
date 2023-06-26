@@ -1,0 +1,18 @@
+
+
+1.docker官网安装docker
+2.终端执行 docker pull nginx:1.20.0
+3.把根木下的nginx本地配置复制到本地
+4.配置nginx的映射路径
+-----port 443
+-----conf.d   到    /etc/nginx/conf.d
+-----cert     到    /etc/nginx/cert
+-----logs     到    /var/log/nginx
+-----www      到    /usr/share/nginx/html
+4.终端执行 sudo vim /etc/hosts  增加127.0.0.1的映射地址  比如 127.0.0.1   local-1.private.cn
+5.修改nginx本地配置中的conf.d/local.conf中的ip地址为本机当前网络下的ip地址  项目名称随意但要对应上  地址要是hosts中的配置的地址
+
+检查
+终端安装brew  地址：brew.sh
+终端执行 brew install telnet
+终端执行 telnet local-1.heweather.cn（域名） 443（映射的端口）
